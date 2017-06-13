@@ -5,20 +5,23 @@
 <title>Insert title here</title>
 </head>
 <body>
+<p> To search a customer fill the form below. </p>
+
 <form action="CustomerServlet" method="post">
 Customer first name: <input type = "text" name="firstName" id="firstName" />
 Customer last name: <input type = "text" name="lastName" id="lastName" />
 <input type= "submit" value="search"/>
 </form>
 
+<p>To update the customer filled please fill the form below.</p>
 <form action = "UpdateCustomer" method="post">
 
-Customer first name:<input type= "text" name="firstName" id="firstName" />
-Customer last name: <input type = "text" name="lastName" id="lastName" />
-Customer city: <input type = "text" name="city" id="city" />
-Customer state: <input type = "text" name="state" id="state" />
-Customer street address: <input type = "text" name="streetAddress" id="streetAddress" />
-Customer zip code: <input type = "text" name="zipCode" id="zipCode" />
+Customer first name:<input type= "text" name="firstName" id="firstName" /><br>
+Customer last name: <input type = "text" name="lastName" id="lastName" /><br>
+Customer city: <input type = "text" name="city" id="city" /><br>
+Customer state: <input type = "text" name="state" id="state" /><br>
+Customer street address: <input type = "text" name="streetAddress" id="streetAddress" /><br>
+Customer zip code: <input type = "text" name="zipCode" id="zipCode" /><br>
 <input type= "submit" value="update"/>
 </form>
 </body>
