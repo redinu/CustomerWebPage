@@ -24,7 +24,10 @@ public class CustomerServlet extends HttpServlet {
         super();
        
     }
-    
+    Connection con = null;
+	Statement stmt = null;
+	ResultSet rs = null;
+	PreparedStatement pstmt;
     String fName ;
     String lName;
 
@@ -50,10 +53,7 @@ public class CustomerServlet extends HttpServlet {
 	
 	public Customer search(String fName, String lName){
 		
-		Connection con = null;
-		Statement stmt = null;
-		ResultSet rs = null;
-		PreparedStatement pstmt;
+		
 		Customer customer = new Customer();
 		
 		String search = "Select * from customers inner join Company c on customers.companyId=c.companyId "
@@ -90,4 +90,6 @@ public class CustomerServlet extends HttpServlet {
 
 		return customer;
 	}
+	
+	
 }
