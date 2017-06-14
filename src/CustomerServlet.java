@@ -47,12 +47,37 @@ public class CustomerServlet extends HttpServlet {
 		Customer cust = search(fName, lName);
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("customer",cust);
-		
+	//	session.setAttribute("customer",cust);
+	
 		
 		getServletContext().getRequestDispatcher(nextURL).forward(request,response);
+	
+	
+	
+	
+	Customer c = new Customer();
+	c.setCustomerId(cust.getCustomerId());
+	c.setFullName(cust.getFullName());
+	c.setFirstName(cust.getFirstName());
+	c.setLastName(cust.getLastName());
+	c.setStreetAddress(cust.getStreetAddress());
+	c.setTitle(cust.getTitle());
+	c.setCity(cust.getCity());
+	c.setState(cust.getState());
+	c.setZipcode(cust.getZipcode());
+	c.setEmailAddress(cust.getEmailAddress());
+	c.setPosition(cust.getPosition());
+	c.setCompany(cust.getCompany());
+	
+	session.setAttribute("customer", c);
 	}
-
+	//Customer my_cust= (Customer)session.getAttribute("customer");
+	
+	
+	
+			
+	//Customer session_cust = session.getAttribute("customer");
+	
 	
 	public Customer search(String fName, String lName){
 		
