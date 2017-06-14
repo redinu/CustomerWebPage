@@ -50,7 +50,7 @@ public class CustomerServlet extends HttpServlet {
 	//	session.setAttribute("customer",cust);
 	
 		
-		getServletContext().getRequestDispatcher(nextURL).forward(request,response);
+	
 	
 	
 	
@@ -70,6 +70,7 @@ public class CustomerServlet extends HttpServlet {
 	c.setCompany(cust.getCompany());
 	
 	session.setAttribute("customer", c);
+	getServletContext().getRequestDispatcher(nextURL).forward(request,response);
 	}
 	//Customer my_cust= (Customer)session.getAttribute("customer");
 	

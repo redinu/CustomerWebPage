@@ -48,10 +48,26 @@ public class UpdateCustomer extends HttpServlet {
 		
 		Customer cust = update(fName, lName);
 		HttpSession session = request.getSession();
-		session.setAttribute("customer",cust);
 		
+		
+		
+		Customer c = new Customer();
+		c.setCustomerId(cust.getCustomerId());
+		c.setFullName(cust.getFullName());
+		c.setFirstName(cust.getFirstName());
+		c.setLastName(cust.getLastName());
+		c.setStreetAddress(cust.getStreetAddress());
+		c.setTitle(cust.getTitle());
+		c.setCity(cust.getCity());
+		c.setState(cust.getState());
+		c.setZipcode(cust.getZipcode());
+		c.setEmailAddress(cust.getEmailAddress());
+		c.setPosition(cust.getPosition());
+		c.setCompany(cust.getCompany());
+		
+		session.setAttribute("customer", c);
 		getServletContext().getRequestDispatcher(nextURL).forward(request,response);
-	}
+		}
 	
 	public Customer update(String fName,String lName){
 		
