@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/UpdateCustomer")
@@ -46,8 +47,8 @@ public class UpdateCustomer extends HttpServlet {
 		zipCode= request.getParameter("zipCode");
 		
 		Customer cust = update(fName, lName);
-	
-		request.setAttribute("customer",cust);
+		HttpSession session = request.getSession();
+		session.setAttribute("customer",cust);
 		
 		getServletContext().getRequestDispatcher(nextURL).forward(request,response);
 	}

@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/CustomerServlet")
@@ -44,8 +45,10 @@ public class CustomerServlet extends HttpServlet {
 		fName = request.getParameter("firstName");
 		lName = request.getParameter("lastName");
 		Customer cust = search(fName, lName);
-	
-		request.setAttribute("customer",cust);
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("customer",cust);
+		
 		
 		getServletContext().getRequestDispatcher(nextURL).forward(request,response);
 	}
