@@ -68,10 +68,6 @@ public class CustomerServlet extends HttpServlet {
 	getServletContext().getRequestDispatcher(nextURL).forward(request,response);
 	}
 	//Customer my_cust= (Customer)session.getAttribute("customer");
-	
-	
-	
-			
 	//Customer session_cust = session.getAttribute("customer");
 	
 	
@@ -99,7 +95,8 @@ public class CustomerServlet extends HttpServlet {
 				customer.setLastName(rs.getString("LastName"));
 				customer.setStreetAddress(rs.getString("StreetAddress"));
 				customer.setCity(rs.getString("City"));
-				customer.setState(rs.getString("state")); customer.setZipcode(rs.getString("ZipCode")); 
+				customer.setState(rs.getString("state")); 
+				customer.setZipcode(rs.getString("ZipCode")); 
 				customer.setEmailAddress(rs.getString("EmailAddress"));
 				customer.setPosition(rs.getString("Position") );
 				customer.setCompany(rs.getString("Company"));
