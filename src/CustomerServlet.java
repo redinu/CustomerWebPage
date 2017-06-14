@@ -50,11 +50,6 @@ public class CustomerServlet extends HttpServlet {
 	//	session.setAttribute("customer",cust);
 	
 		
-	
-	
-	
-	
-	
 	Customer c = new Customer();
 	c.setCustomerId(cust.getCustomerId());
 	c.setFullName(cust.getFullName());
